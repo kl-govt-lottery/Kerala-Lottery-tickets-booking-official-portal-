@@ -41,7 +41,7 @@
 
         /* Featured Ticket Box */
         .ticket { background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: white; border-radius: 10px; padding: 15px; text-align: center; margin-bottom: 12px; box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4); }
-        .ticket-number { font-size: 20px; font-weight: bold; letter-spacing: 2px; background: rgba(0, 0, 0, 0.25); padding: 8px; border-radius: 6px; display: inline-block; border: 1px dashed rgba(255, 255, 255, 0.5); margin: 8px 0; word-break: break-all; color: #fef08a; }
+        .ticket-number { font-size: 16px; font-weight: bold; letter-spacing: 1px; background: rgba(0, 0, 0, 0.25); padding: 10px; border-radius: 6px; display: block; border: 1px dashed rgba(255, 255, 255, 0.5); margin: 8px 0; word-break: break-all; max-height: 120px; overflow-y: auto; color: #fef08a; }
 
         /* Buttons */
         .btn { background-color: #f59e0b; color: white; border: none; padding: 10px; font-size: 14px; border-radius: 6px; cursor: pointer; width: 100%; margin-bottom: 8px; font-weight: bold; }
@@ -152,7 +152,6 @@
                 <tr><td>8th Prize</td><td>₹25,000</td><td>120 Persons</td></tr>
                 <tr><td>9th Prize</td><td>₹10,000</td><td>179 Persons</td></tr>
             </table>
-
             <div style="text-align: center; margin-top: 10px; font-size: 12px; color: #34d399; font-weight: bold;">
                 Helpline Number: 8893803692
             </div>
@@ -201,7 +200,7 @@
             const prefix = currentType === 'VIP' ? 'KLV' : 'KL';
             const gridContainer = document.getElementById('ticketGridContainer');
             gridContainer.innerHTML = '';
-            
+
             for (let i = 0; i < 100; i++) {
                 const randomNum = Math.floor(100000 + Math.random() * 900000);
                 const ticketStr = `${prefix} ${randomNum}`;
@@ -241,7 +240,7 @@
                 alert("Kam se kam ek ticket select karein!");
                 return;
             }
-            const phoneNumber = "918893803692;
+            const phoneNumber = "918893803692"; // Fixed missing quote here
             const totalAmount = selectedTickets.length * currentPrice;
             const message = `Hello, maine ${currentType} Ticket category se ${selectedTickets.length} tickets select kiye hain.\n\nTicket Numbers: ${selectedTickets.join(', ')}\nTotal Amount: ₹${totalAmount}`;
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
